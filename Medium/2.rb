@@ -1,24 +1,25 @@
 class FixedArray 
+
   def initialize(num)
-   @array = Array.new(num)
+    @array = Array.new(5)
   end
-  
+
   def []=(index, value)
     @array[index] = value
   end
 
-  def [](index)
+  def [] (index)
     @array.fetch(index)
   end
-
   def to_a
     @array.clone
   end
-  
   def to_s
-    to_a.to_s
-  end 
+    "#{@array}"
+  end
+
 end
+
 
 fixed_array = FixedArray.new(5)
 puts fixed_array[3] == nil
@@ -57,4 +58,5 @@ begin
 rescue IndexError
   puts true
 end
+
 
